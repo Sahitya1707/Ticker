@@ -1,0 +1,95 @@
+/* .ticker-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+} */
+.swiper-ticker img {
+  width: 4rem;
+  height: 4rem;
+}
+.swiper-ticker {
+  display: flex;
+  width: 20rem;
+  text-wrap: wrap;
+  gap: 2rem;
+  border: 2px solid black;
+}
+/* ------------------------ */
+/* custom css below */
+.ticker-wrapper {
+  width: 100%;
+  background-color: #333;
+  overflow: hidden;
+  position: relative;
+}
+.ticker-item img {
+  height: 4rem;
+  width: 4rem;
+}
+.ticker-item {
+  flex: none;
+  padding: 10px 20px;
+  width: 20rem;
+  color: #fff;
+  white-space: nowrap;
+}
+/*  */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.ticker-container {
+  width: 90%;
+  overflow: hidden;
+  background-color: #333;
+  color: white;
+  border: 1px solid #ccc;
+  position: relative;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+p {
+  color: black;
+}
+
+.ticker {
+  font-size: 15px;
+  padding-block: 8px;
+
+  overflow: hidden;
+
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
+  /* background-color: black; */
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+.ticker-items {
+  /* background-color: red; */
+  display: flex;
+
+  justify-content: space-between;
+
+  min-width: 100%;
+  animation: ticker 10s linear infinite;
+}
+.ticker:hover .ticker-items {
+  animation-play-state: paused;
+}
+.ticker-item {
+  display: flex;
+
+  gap: var(--gap);
+}
+.ticker-item p {
+  width: 102rem;
+  text-wrap: wrap;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
