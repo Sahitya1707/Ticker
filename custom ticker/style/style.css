@@ -1,0 +1,88 @@
+/* ------------------------ */
+/* custom css below */
+.ticker {
+  background: #000;
+  display: flex;
+
+  align-items: center;
+}
+
+.ticker-item img {
+  height: 3rem;
+  width: 8rem;
+}
+.ticker-item {
+  /* flex: none; */
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 10px 10px;
+  width: 20% !important;
+
+  color: #fff;
+  white-space: nowrap;
+  /* border-right: 2px solid red; */
+}
+
+.ticker-item p {
+  color: white;
+}
+/*  */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.ticker-container {
+  width: 90%;
+  overflow: hidden;
+  background-color: #333;
+  color: white;
+  border: 1px solid #ccc;
+  position: relative;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+p {
+  color: black;
+}
+
+.ticker {
+  font-size: 15px;
+  padding-block: 8px;
+
+  overflow: hidden;
+
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+.ticker-items {
+  /* background-color: red; */
+  display: flex;
+
+  justify-content: space-evenly;
+
+  min-width: 100%;
+  animation: ticker 15s linear infinite;
+}
+.ticker:hover .ticker-items {
+  animation-play-state: paused;
+}
+.ticker-item {
+  display: flex;
+
+  gap: var(--gap);
+}
+.ticker-item p {
+  width: 102rem;
+  text-wrap: wrap;
+}
+@keyframes ticker {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}

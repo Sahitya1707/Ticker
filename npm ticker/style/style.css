@@ -1,0 +1,22 @@
+/* .ticker-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+} */
+#ticker {
+  background-color: black;
+  color: white;
+}
+.swiper-ticker img {
+  /* width: 4rem; */
+  height: 4rem;
+}
+.swiper-ticker {
+  padding: 2rem;
+  display: flex;
+  align-items: start;
+  width: 25rem;
+  text-wrap: wrap;
+  gap: 2rem;
+}
+/* ------------------------ */

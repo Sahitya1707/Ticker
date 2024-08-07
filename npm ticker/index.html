@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Ticker</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="./script.js"></script>
+
+</head>
+
+<body>
+    <div class="swiper mySwiper" id="ticker">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-ticker">
+                    <img src="./images/aws.png" alt="">
+                    <p>Cloud computing platform offering various services.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-ticker">
+                    <img src="./images/chatgpt.png" alt="">
+                    <p>Code hosting and collaboration platform</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-ticker">
+                    <img src="./images/ibm.png" alt="">
+                    <p>Technology and consulting company providing cloud, AI, and more.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-ticker">
+                    <img src="./images/Microsoft_Azure.svg.png" alt="">
+                    <p>Cloud computing platform with a wide range of services.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+
+
+
+    <!-- ------------------------------------- -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "3",
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                // pauseOnMouseEnter: true,
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 5000, // Adjust speed (higher value = slower)
+            freeMode: true, // Enable free mode for continuous scrolling
+            freeModeMomentum: true, // Allow momentum-based scrolling
+            freeModeMomentumRatio: 0.5, // Adjust momentum ratio for smoother effect
+            freeModeSticky: false, // Disable sticky behavior for smoother scrolling
+            watchSlidesProgress: true, // Watch slides progress for smoother animations
+            grabCursor: true, // Change cursor on hover to indicate draggable area
+        });
+
+    </script>
+</body>
+
+
+</html>
