@@ -6,6 +6,7 @@
 #ticker {
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 .swiper-wrapper {
   animation-timing-function: linear;
