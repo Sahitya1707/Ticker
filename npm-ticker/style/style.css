@@ -7,6 +7,12 @@
   background-color: black;
   color: white;
 }
+.swiper-wrapper {
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  padding: 6px 0;
+}
 .swiper-ticker img {
   /* width: 4rem; */
   height: 4rem;
