@@ -16,26 +16,28 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="swiper-ticker">
-                    <img src="./images/aws.png" alt="">
-                    <p>Cloud computing platform offering various services.</p>
+                    <img src="./images/aws.png" class="aws" alt="">
+                    <p>Cloud computing platform offering various services. THis is one of the important tool which will
+                        be very usefule in the future.</p>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="swiper-ticker">
-                    <img src="./images/chatgpt.png" alt="">
-                    <p>Code hosting and collaboration platform</p>
+                    <img src="./images/chatgpt.png" class="chatgpt" alt="">
+                    <p>Code hosting and collaboration platform. You can use this to host and collabrate your cde.</p>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="swiper-ticker">
-                    <img src="./images/ibm.png" alt="">
-                    <p>Technology and consulting company providing cloud, AI, and more.</p>
+                    <img src="./images/ibm.png" class="ibm" alt="">
+                    <p>Technology and consulting company providing cloud, AI, and more. Meet you in the ibm.</p>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="swiper-ticker">
-                    <img src="./images/Microsoft_Azure.svg.png" alt="">
-                    <p>Cloud computing platform with a wide range of services.</p>
+                    <img src="./images/Microsoft_Azure.svg.png" class="azure" alt="">
+                    <p>Cloud computing platform with a wide range of services. This is also very useful for learning..
+                    </p>
                 </div>
             </div>
 
@@ -59,14 +61,17 @@
             slidesPerView: "3",
             spaceBetween: 0,
             loop: true,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
             autoplay: {
                 pauseOnMouseEnter: true,
                 delay: 0,
+                disableOnInteraction: false
                 //   disableOnInteraction: false,
             },
-            speed: 5000,
-            freeMode: true,
-
+            speed: 4500,
+            // freeMode: true,
+            touchStartPreventDefault: false,
             // grabCursor: true, 
         });
 

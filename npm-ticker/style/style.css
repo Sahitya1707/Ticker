@@ -3,6 +3,10 @@
   justify-content: center;
   width: 100vw;
 } */
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 #ticker {
   background-color: black;
   color: white;
@@ -12,18 +16,37 @@
   animation-timing-function: linear;
   animation-duration: 5s;
   animation-iteration-count: infinite;
-  padding: 6px 0;
 }
 .swiper-ticker img {
   /* width: 4rem; */
-  height: 4rem;
+  /* height: 4rem; */
 }
 .swiper-ticker {
+  /* border: 2px solid red; */
   padding: 2rem;
   display: flex;
   align-items: start;
-  width: 25rem;
+  /* width: 25rem; */
   text-wrap: wrap;
   gap: 2rem;
 }
 /* ------------------------ */
+.azure {
+  height: 5rem;
+  width: 7rem;
+}
+.chatgpt {
+  height: 5rem;
+  width: 5rem;
+}
+.aws {
+  width: 9rem;
+  height: 5rem;
+}
+.ibm {
+  height: 5rem;
+  width: 9rem;
+}
+p {
+  text-align: justify;
+}
