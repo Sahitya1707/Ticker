@@ -18,32 +18,34 @@
 }
 .swiper-ticker {
   /* border: 2px solid red; */
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   /* width: 25rem; */
   text-wrap: wrap;
   gap: 1rem;
   font-weight: 400;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.3px;
 }
 /* ------------------------ */
-.azure {
+#azure {
   height: 5rem;
   width: 7rem;
 }
-.chatgpt {
+#chatgpt,
+#linkedin {
   height: 5rem;
   width: 5rem;
 }
-.aws {
-  width: 9rem;
+#aws {
+  width: 7rem;
   height: 4rem;
 }
-.ibm {
+#ibm {
   height: 5rem;
   width: 9rem;
 }
 p {
-  text-align: justify;
+  font-weight: bold;
+  margin: 0.1rem 0 0 0;
 }

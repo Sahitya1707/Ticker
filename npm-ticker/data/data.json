@@ -2,26 +2,31 @@
   {
     "name": "AWS",
     "description": "Comprehensive cloud platform for computing, storage, databases, and more.",
-    "imageUrl": "./images/aws.png"
+    "imageUrl": "./images/aws.png",
+    "id": "aws"
   },
   {
     "name": "ChatGPT",
     "description": "Advanced AI for text generation, translation, and answering questions.",
-    "imageUrl": "./images/chatgpt.png"
+    "imageUrl": "./images/chatgpt.png",
+    "id": "chatgpt"
   },
   {
-    "name": "GitHub",
-    "description": "Popular platform for code hosting, collaboration, and project management.",
-    "imageUrl": "./images/github.png"
+    "name": "Linkedin",
+    "description": "Employment-focused social media platform that works through websites and mobile apps",
+    "imageUrl": "./images/linkedin.png",
+    "id": "linkedin"
   },
   {
     "name": "IBM",
     "description": "Global tech leader offering hardware, software, and cloud services.",
-    "imageUrl": "./images/ibm.png"
+    "imageUrl": "./images/ibm.png",
+    "id": "ibm"
   },
   {
     "name": "Azure",
     "description": "Cloud computing platform with various services for building, deploying, and managing applications.",
-    "imageUrl": "./images/azure.png"
+    "imageUrl": "./images/azure.png",
+    "id": "azure"
   }
 ]
