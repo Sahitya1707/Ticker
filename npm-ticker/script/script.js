@@ -1,60 +1,87 @@
-const wrapper = document.querySelector("#ticker .swiper-wrapper");
-const originalTransform = window.getComputedStyle(wrapper).transform;
-const tickerItems = document.querySelectorAll(".swiper-slide");
-// const translate = swiper.translate;
-let translate;
-let jsonData;
-var swiper;
+/**
+ *  * Ticker 1.0.0
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ *
+ *
+ * Copyright 2024 Ds Digital Media
+ *
+ *
+ *
+ * Released on: July 31, 2024
+ */
 
-// below is the code to stop ticker when mouse is over
-wrapper.addEventListener("mouseover", () => {
-  console.log(swiper.translate);
-  const currentTransform = window.getComputedStyle(wrapper).transform;
-  wrapper.style.transitionDuration = "0ms";
-  wrapper.style.transitionDelay = "0ms";
-  wrapper.style.transform = currentTransform;
-});
+const parent_ticker_element = document.querySelector(".main-ticker");
+const fetch_url_link = "../npm-ticker/data/data.json";
 
-wrapper.addEventListener("mouseout", () => {
-  // Resume the transition
-  wrapper.style.transitionDuration = `${swiper.passedParams.speed}ms`;
+const initializeTicker = (parent_div, fetch_url) => {
+  const wrapper_element = document.querySelector(
+    `${parent_div} #ticker .swiper-wrapper`
+  );
 
-  wrapper.style.transitionDelay = " ";
-  wrapper.style.transform = `translate3d(${swiper.translate}px, 0px, 0px)`;
-});
-const fetchData = async () => {
-  await fetch("../npm-ticker/data/data.json")
-    .then((res) => res.json())
-    .then((data) => {
-      jsonData = data;
-      jsonData.forEach((e, i) => {
-        wrapper.innerHTML += `
-       
-         <div class="swiper-slide">
-                <div class="swiper-ticker">
-                    <img src=${e.imageUrl} class="aws" alt="" id=${e.id}>
-                    <p>${e.description}</p>
-                </div>
+  const ticker_items = document.querySelectorAll(".swiper-slide");
+  let translate_value;
+  let json_data;
+  let swiper_instance;
+
+  // below is the code to stop ticker when mouse is over
+  wrapper_element.addEventListener("mouseover", () => {
+    // swiper_instance.autoplay.stop();
+    console.log(swiper_instance.autoplay.timeLeft);
+    const current_transform =
+      window.getComputedStyle(wrapper_element).transform;
+    wrapper_element.style.transitionDuration = "0ms";
+    wrapper_element.style.transitionDelay = "0ms";
+    wrapper_element.style.transform = current_transform;
+  });
+
+  wrapper_element.addEventListener("mouseout", () => {
+    // Resume the transition
+    // swiper_instance.params.autoplay.delay = 0;
+    console.log(swiper_instance.autoplay.timeLeft);
+    // console.log(swiper_instance);
+    // swiper_instance.autoplay.start();
+    wrapper_element.style.transitionDuration = `${swiper_instance.passedParams.speed}ms`;
+    wrapper_element.style.transitionDelay = " ";
+    wrapper_element.style.transform = `translate3d(${swiper_instance.translate}px, 0px, 0px)`;
+  });
+
+  const fetchData = async () => {
+    await fetch(fetch_url)
+      .then((response) => response.json())
+      .then((data) => {
+        json_data = data;
+        json_data.forEach((item, index) => {
+          wrapper_element.innerHTML += `
+          <div class="swiper-slide">
+            <div class="swiper-ticker">
+              <img src=${item.imageUrl} class="aws" alt="" id=${item.id}>
+              <p>${item.description}</p>
             </div>
+          </div>
         `;
+        });
+        // initializing swiper only after fetching data
+        swiper_instance = new Swiper(".mySwiper", {
+          slidesPerView: "3",
+          spaceBetween: 0,
+          loop: true,
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            timeLeft: 0,
+          },
+          speed: 4500,
+          touchStartPreventDefault: false,
+          freeMode: true,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
       });
-      //   initializing swiper only after fetching
-      swiper = new Swiper(".mySwiper", {
-        slidesPerView: "3",
-        spaceBetween: 0,
-        loop: true,
-        autoplay: {
-          delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-        speed: 4500,
-        touchStartPreventDefault: false,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  };
+
+  // fetching the data
+  fetchData();
 };
-// fetching the data
-fetchData();
+initializeTicker(".main-ticker", "../npm-ticker/data/data.json");
