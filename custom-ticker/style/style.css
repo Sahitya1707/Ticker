@@ -1,88 +1,61 @@
-/* ------------------------ */
-/* custom css below */
-.ticker {
-  background: #000;
-  display: flex;
-
-  align-items: center;
-}
-
-.ticker-item img {
-  height: 3rem;
-  width: 8rem;
-}
-.ticker-item {
-  /* flex: none; */
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  padding: 10px 10px;
-  width: 19% !important;
-
-  color: #fff;
-  white-space: nowrap;
-  /* border-right: 2px solid red; */
-}
-
-.ticker-item p {
-  color: white;
-}
-/*  */
-
+/* Style.css */
 body {
   font-family: Arial, sans-serif;
 }
-
-.ticker-container {
-  width: 90%;
-  overflow: hidden;
-  background-color: #333;
-  color: white;
-  border: 1px solid #ccc;
-  position: relative;
-  white-space: nowrap;
-  box-sizing: border-box;
-}
-p {
-  color: black;
+img {
+  height: 4rem;
 }
 
 .ticker {
-  font-size: 15px;
-  padding-block: 8px;
-
+  background-color: black;
+  display: flex;
   overflow: hidden;
-
+  padding: 1rem 2rem;
+  user-select: none;
+  border-block: 1px solid;
   --gap: 20px;
-  display: flex;
   gap: var(--gap);
+  white-space: nowrap;
 }
-.ticker:hover {
-  animation-play-state: paused;
-}
+
 .ticker-items {
-  /* background-color: red; */
   display: flex;
-
-  justify-content: space-evenly;
-
+  flex-shrink: 0;
   min-width: 100%;
-  animation: ticker 15s linear infinite;
+  gap: var(--gap);
+  animation: scroll 30s linear infinite;
+  justify-content: space-between;
+}
+
+.ticker-item {
+  /* white-space: nowrap; */
+  display: flex;
+  width: 28rem;
+  text-wrap: wrap;
+  gap: 1rem;
+}
+
+.ticker-item p {
+  font-weight: bold;
+  color: white;
+}
+#second {
+  transform: translateX(0%);
+  animation-delay: 10s;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 .ticker:hover .ticker-items {
   animation-play-state: paused;
 }
-.ticker-item {
-  display: flex;
-
-  gap: var(--gap);
-}
-.ticker-item p {
-  width: 102rem;
-  text-wrap: wrap;
-}
-@keyframes ticker {
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-  }
-}
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
