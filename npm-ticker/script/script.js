@@ -25,8 +25,8 @@ const initializeTicker = (parent_div, fetch_url) => {
 
   // below is the code to stop ticker when mouse is over
   wrapper_element.addEventListener("mouseover", () => {
-    // swiper_instance.autoplay.stop();
-    console.log(swiper_instance.autoplay.timeLeft);
+    swiper_instance.autoplay.stop();
+
     const current_transform =
       window.getComputedStyle(wrapper_element).transform;
     wrapper_element.style.transitionDuration = "0ms";
@@ -35,11 +35,7 @@ const initializeTicker = (parent_div, fetch_url) => {
   });
 
   wrapper_element.addEventListener("mouseout", () => {
-    // Resume the transition
-    // swiper_instance.params.autoplay.delay = 0;
-    console.log(swiper_instance.autoplay.timeLeft);
-    // console.log(swiper_instance);
-    // swiper_instance.autoplay.start();
+    swiper_instance.autoplay.start();
     wrapper_element.style.transitionDuration = `${swiper_instance.passedParams.speed}ms`;
     wrapper_element.style.transitionDelay = " ";
     wrapper_element.style.transform = `translate3d(${swiper_instance.translate}px, 0px, 0px)`;
@@ -54,7 +50,7 @@ const initializeTicker = (parent_div, fetch_url) => {
           wrapper_element.innerHTML += `
           <div class="swiper-slide">
             <div class="swiper-ticker">
-              <img src=${item.imageUrl} class="aws" alt="" id=${item.id}>
+              <img src=${item.imageUrl}  alt="" }>
               <p>${item.description}</p>
             </div>
           </div>
@@ -84,4 +80,5 @@ const initializeTicker = (parent_div, fetch_url) => {
   // fetching the data
   fetchData();
 };
+// passing the class of the parent div and fetch url
 initializeTicker(".main-ticker", "../npm-ticker/data/data.json");
